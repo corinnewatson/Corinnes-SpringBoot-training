@@ -1,8 +1,11 @@
-package com.in28minutes.learning.jpa.jpain10steps.service;
+package com.in28minutes.springboot.web.jpa;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
 
-public interface UserRepository extends JpaRepository<com.in28minutes.learning.jpa.jpain10steps.entity.User, Long > {
+import org.springframework.data.repository.CrudRepository;
 
+// creates a user repo to perform crud operations on user profiles
+public interface UserRepository extends CrudRepository<User, Long> {
 
+	List<User> findByRole(String role);
 }
